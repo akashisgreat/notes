@@ -1,9 +1,9 @@
 #!/bin/bash
 
-projectDir="$HOME/doc/projects/notes/"
 inputDir="$HOME/des/"
+projectDir="$HOME/doc/projects/notes/"
 
-xoppdir="${1:-$defaultDir}"
+xoppdir="${1:-$inputDir}"
 pdfdir="$projectDir/root/pdf/"
 pdf_files_data="$projectDir/root/data.json"
 

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+
+defaultDir="$HOME/doc/study/"
+xoppdir="${1:-$defaultDir}"
+
+#xoppdir="./xopp/"
+pdfdir="./root/pdf/"
+pdf_files_data="./root/data.json"
+
+
+echo "Files using from: $xoppdir"
+
+# refreshing the pdf files (all "old/just update" pdf files were moved to /tmp/ dir)
+mkdir -p /tmp/xopp-backup
+mv $pdfdir/* /tmp/xopp-backup  2>/dev/null
+
+# Ensure the output directory exists
+mkdir -p "$pdfdir"
+
+# Iterate over xopp files
+#for xopp_file in "$xoppdir"*.xopp; do
+find "$xoppdir" -type f -name "*.xopp" | while read -r xopp_file; do
+    # Check if the file exists
+    if [ -e "$xopp_file" ]; then
+        # Extracting the filename without path and extension
+        filename=$(basename -- "$xopp_file")
+        filename_noext="${filename%.xopp}"
+
+        # Convert xopp to pdf
+        xournalpp "$xopp_file" -p "$pdfdir$filename_noext.pdf"
+    else
+        echo "File not found: $xopp_file"
+        exit 1;
+    fi
+done;
+
+
+ls_output=$(ls -t -1 -v "$pdfdir" | jq -R -s 'split("\n")[:-1]')
+
+if [ $? -eq 0 ]; then
+    echo "$ls_output" > "$pdf_files_data"
+    echo "Json Data genreated Successfully." 
+else
+    echo "Error occurred while running ls command."
+fi

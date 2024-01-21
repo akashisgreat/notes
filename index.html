@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📒</text></svg>">
+    <title>Notes</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        padding: .5em;
+        padding-bottom: .1em;
+        text-align: center;
+    }
+
+    h1 span {
+        text-decoration: underline;
+    }
+
+    .search {
+        width: 90%;
+        padding: .5em;
+        margin: .5em auto;
+        display: flex;
+    }
+
+    .search input {
+        width: 400px;
+        padding: .5em;
+        font-size: 1.1em;
+        margin: .5em auto;
+    }
+
+    main {
+        padding: .5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1.2em;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    main .item {
+        color: unset;
+        text-decoration: unset;
+        border-radius: .5em;
+        padding: 1em;
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+        -webkit-tap-highlight-color: transparent;
+        tap-highlight-color: transparent;
+        cursor: default;
+
+    }
+
+    main .item .name {
+        font-family: Arial;
+        width: 100%;
+        padding: 0em .3em;
+    }
+
+    main .item .name:first-letter {
+    text-transform: uppercase;
+    }
+
+    main .item:hover,
+    main .item:active{
+        text-decoration: underline;
+        box-shadow: 0 0 0 5px rgba(117, 145, 118, 0.656);
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: 50px auto;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media (max-width:770px) {
+        main {
+            width: 95%;
+        }
+    }
+
+    .hide {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <header>
+        <h1><span>Notes</span> 📒</h1>
+        <div class="search">
+            <input type="text" autofocus placeholder="Search here">
+        </div>
+        <hr>
+        <br>
+    </header>
+    <div style="display: none;" class="loader"></div>
+    <main>
+    </main>
+</body>
+
+<script>
+    url = 'root/data.json'
+    pdfviewerurl = 'root/pdfjs/web/viewer.html?file='
+    // pdfviewerurl = 'https://mozilla.github.io/pdf.js/web/viewer.html?file='
+    pdfdir = '../../pdf'
+
+    main = document.querySelector('main')
+    loader = document.querySelector('.loader')
+
+    function fetchurl(url) {
+        loader.style.display = "block"
+        let jsonData;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                use_data(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    fetchurl(url)
+
+
+    function use_data(data) {
+        loader.style.display = "none"
+
+    for (let i = 0; i < data.length; i++) {
+        const e = data[i];
+        main.innerHTML += `
+            <a class="item" href="${pdfviewerurl}${pdfdir}/${e}" target="_blank">
+                ${i+1}.&nbsp; <span class="name">${e}</span>
+            </a>
+            ` 
+    }
+    }
+
+
+
+
+    /* Fuzzy Search Function */
+    const searchInput = document.querySelector('.search input');
+    const searchResultsDiv = document.querySelector('main');
+    const divs = searchResultsDiv.getElementsByTagName('a');
+
+    function fuzzySearch(searchText) {
+        const matches = [];
+        const nonMatches = [];
+
+        for (let i = 0; i < divs.length; i++) {
+            const div = divs[i];
+            const text = div.innerText.toLowerCase();
+            const query = searchText.toLowerCase();
+
+            if (text.includes(query)) {
+                const index = text.indexOf(query);
+                matches.push({ div, index });
+                div.classList.remove('hide')
+            } else {
+                nonMatches.push(div);
+                div.classList.add('hide')
+            }
+        }
+
+        matches.sort((a, b) => a.index - b.index);
+        searchResultsDiv.innerHTML = '';
+        matches.forEach((match) => {
+            searchResultsDiv.appendChild(match.div.cloneNode(true));
+        });
+        nonMatches.forEach((nonMatch) => {
+            searchResultsDiv.appendChild(nonMatch.cloneNode(true));
+        });
+    }
+
+    searchInput.addEventListener('input', function () {
+        const searchText = this.value;
+        fuzzySearch(searchText);
+    });
+
+
+
+
+
+
+</script>
+
+</html>

@@ -32,6 +32,7 @@ find "$xoppdir" -type f -name "*.xopp" | while read -r xopp_file; do
 	$NOTY $xopp_file
     else
         echo "File not found: $xopp_file"
+	$NOTY "$xopp_file"
         exit 1;
     fi
 done;

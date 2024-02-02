@@ -7,18 +7,8 @@ xoppdir="${1:-$inputDir}"
 pdfdir="$projectDir/root/pdf/"
 pdf_files_data="$projectDir/root/data.json"
 
-NOTY="notify-send"
 
 echo "$xoppdir =====> $pdfdir, $pdf_files_data"
-
-# Flag to check if Git operations should be performed
-git_operations=false
-
-# Check if the "--git" flag is provided
-if [[ $* == *"--git"* ]]; then
-    # Set the flag to perform Git operations
-    git_operations=true
-fi
 
 # refreshing the pdf files (all "old/just update" pdf files were moved to /tmp/ dir)
 mkdir -p /tmp/xopp-backup
@@ -38,26 +28,11 @@ find "$xoppdir" -type f -name "*.xopp" | while read -r xopp_file; do
         # Convert xopp to pdf
         xournalpp "$xopp_file" -p "$pdfdir$filename_noext.pdf"
         #echo "$xopp_file"  "$pdfdir$filename_noext.pdf"
-        $NOTY "$xopp_file"
-
-        # Set flag to perform Git operations
-        git_operations=true
-
     else
         echo "File not found: $xopp_file"
-        $NOTY "$xopp_file"
         exit 1;
     fi
 done;
-
-# Check if Git operations should be performed
-if [ "$git_operations" = true ]; then
-    # Git operations
-    git -C "$projectDir" add -A 
-    git -C "$projectDir" commit -m "$(date +%Y-%m-%d_%I:%M:%S)"
-    git -C "$projectDir" push
-    echo "Git operations completed."
-fi
 
 ls_output=$(ls -t -1 -v "$pdfdir" | jq -R -s 'split("\n")[:-1]')
 
@@ -67,3 +42,20 @@ if [ $? -eq 0 ]; then
 else
     echo "Error occurred while running ls command."
 fi
+
+# Flag to check if Git operations should be performed
+echo "----------------------------------"
+echo -n "Do you want 'git push' [y/N]: "
+read q
+
+if [[ $q = "y" ]]; then
+    # Git operations
+    git -C "$projectDir" add -A 
+    echo -n "Commit [YYYY-MM-DD_HH:MM:SS]: "
+    read commit
+    git -C "$projectDir" commit -m "$(date +%Y-%m-%d_%I:%M:%S) : $commit"
+    git -C "$projectDir" push
+    echo "Git operations completed."
+fi
+
+

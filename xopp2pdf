@@ -13,7 +13,7 @@ echo "$xoppdir =====> $pdfdir, $pdf_files_data"
 
 # refreshing the pdf files (all "old/just update" pdf files were moved to /tmp/ dir)
 mkdir -p /tmp/xopp-backup
-mv $pdfdir/* /tmp/xopp-backup  2>/dev/null
+mv $pdfdir/* /tmp/xopp-backup/  2>/dev/null
 
 # Ensure the output directory exists
 mkdir -p "$pdfdir"
@@ -28,7 +28,8 @@ find "$xoppdir" -type f -name "*.xopp" | while read -r xopp_file; do
         filename_noext="${filename%.xopp}"
 
         # Convert xopp to pdf
-        xournalpp "$xopp_file" -p "$pdfdir$filename_noext.pdf"
+        #xournalpp "$xopp_file" -p "$pdfdir$filename_noext.pdf"
+        echo "$xopp_file"  "$pdfdir$filename_noext.pdf"
 	$NOTY $xopp_file
     else
         echo "File not found: $xopp_file"

@@ -11,8 +11,8 @@ pdf_files_data="$projectDir/root/data.json"
 echo "$xoppdir =====> $pdfdir, $pdf_files_data"
 
 # refreshing the pdf files (all "old/just update" pdf files were moved to /tmp/ dir)
-mkdir -p /tmp/xopp-backup
-mv "$pdfdir"/* /tmp/xopp-backup/  2>/dev/null
+#mkdir -p /tmp/xopp-backup
+#mv "$pdfdir"/* /tmp/xopp-backup/  2>/dev/null
 
 # Ensure the output directory exists
 mkdir -p "$pdfdir"

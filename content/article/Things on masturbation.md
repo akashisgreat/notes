@@ -1,8 +1,7 @@
 ---
 title: About masturbation
 draft: false
-tags:
-  - example-tag
+tags: []
 ---
 
 

@@ -22,13 +22,10 @@
 - [ ] display (oled, 7-segment)
 - [ ] wireless module (nrf24l01, rf module, lora)
 - [ ] door sensor
-
----
-
 # Gadget
-- [ ] [Neckband](Neckband.md)
-- [ ] [phone](phone.md)
-- [ ] [tv](tv.md)
+- [ ] nechband
+- [ ] [[phone]]
+- [ ] tv
 - [ ] Pichkar
 - [ ] clamp meter
 - [ ] trimmer

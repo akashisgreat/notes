@@ -8,5 +8,4 @@
 - [sparshcastic2058](https://www.youtube.com/@sparshcastic2058)
 - Osho
 
-# what is this
-this is the way to expolar this.
+

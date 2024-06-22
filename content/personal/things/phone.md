@@ -12,7 +12,7 @@
 
 
 # 1. Motorola G34 5G
-![](media/Pasted%20image%2020240614175338.png)
+![[Pasted image 20240614175338.png]]
 - Price: ₹11,999
 - 8 GB RAM | 128 GB ROM
 - 16.51 cm (6.5 inch) HD+ Display

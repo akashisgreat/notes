@@ -14,7 +14,7 @@
 
 
 
-# 1. Motorola G34 5G
+# Motorola G34 5G
 ![[Pasted image 20240614175338.png]]
 - Price: ₹11,999
 - 8 GB RAM | 128 GB ROM
@@ -50,7 +50,7 @@
 | Depth      | - 8 mm   |
 
 ---
-# Realme P1 5G (Phoenix Red, 128 GB)  (6 GB RAM)
+# Realme P1 5G
 
 ![[Pasted image 20240625220525.png]]
 

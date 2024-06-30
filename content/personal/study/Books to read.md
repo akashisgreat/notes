@@ -16,3 +16,6 @@
 # The Story of My Experiments with Truth (by Mahatma Gandh)
 
 ![](https://rekhtabooks.com/cdn/shop/products/1111015709078.jpg?v=1680040952)
+
+# Why i am an athiest and other work (by bhagat singh)
+![[Pasted image 20240630073622.png]]

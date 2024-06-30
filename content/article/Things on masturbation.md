@@ -1,6 +1,6 @@
 ---
 title: About masturbation
-draft: true
+draft: false
 tags:
 ---
 

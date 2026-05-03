@@ -1,19 +1,19 @@
 # Books to read
 
 ## 1. Rational optimist (by Matt Ridley)
-![](./files/Rational-optimist.png)
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQQlI-cQtm_k5UPqx6XrPEb3N3Bw9gyM9lsde2oeGRRXQCMvKBhrYtmpDAKNMCW3SRlzQuMRYd1E5kM_D4o9cydFnmMv25PcT6RiWW4-dDA&s=10)
 
 ## 2. Fundamentals ten keys to reality (by Frank Wilczek)
-![](./files/funda-ten-key-to-reality.png)
+![](https://sun9-61.userapi.com/impg/2fo_C9irywKBTwDhXRO-GdEco_PIkrxvOyY0sw/6sdYgya6Yfc.jpg?size=1405x2160&quality=96&sign=d37f296c60d2e1478cd12d3e0448028b&type=album)
 
 ## 3. Masala lab (by Krish Ashok) 
-![](./files/masala-lab.png)
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS77vV7WAWoYlfVaxwNM4RjIfAZ0eOZ7nJCm6sQTpJPZoWEkoQecy0jyhtD86NGK8VABbYc8lsTOwoWbexMOPSPgTAZQKvXOCAD-Nac-TU&s=10)
 
 ## 4. An elegant defence (by Matt Richtel)
-![](./files/an-elegant-defence.png)
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdD7sbFSoXubb0CMlVSJZtfILP63_Pd2Dklw&s)
 
 ## 5. Enlightenment Now (by Steven Pinker)
-![](./files/enlightenment-now.png)
+![](https://m.media-amazon.com/images/I/81TgCVpAgIL._AC_UF1000,1000_QL80_.jpg)
 
 ## 6. The Story of My Experiments with Truth (by Mahatma Gandhi)
 ![The Experiment with Truth](./files/expererment-with-truth.png.png)

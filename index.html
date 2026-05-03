@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 12px;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.search {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+/* TREE */
+.tree {
+  padding: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.item {
+  display: flex;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.item:hover {
+  background: #e5e7eb;
+}
+
+.icon {
+  width: 24px;
+}
+
+.children {
+  margin-left: 16px;
+  display: none;
+}
+
+.open > .children {
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .item {
+    padding: 8px 4px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="title">📁 File Explorer</div>
+  <input type="text" id="search" class="search" placeholder="Search files...">
+</div>
+
+<div class="tree" id="tree"></div>
+
+<script>
+const user = "akashisgreat";
+const repo = "notes";
+let branch = "main";
+let allFiles = [];
+
+/* LOAD FILES */
+async function loadFiles() {
+  const repoData = await fetch(`https://api.github.com/repos/${user}/${repo}`).then(r => r.json());
+  branch = repoData.default_branch;
+
+  const treeData = await fetch(
+    `https://api.github.com/repos/${user}/${repo}/git/trees/${branch}?recursive=1`
+  ).then(r => r.json());
+
+  allFiles = treeData.tree.filter(i => i.type === "blob");
+
+  renderTree(buildTree(allFiles), document.getElementById("tree"));
+}
+
+/* BUILD TREE */
+function buildTree(files) {
+  const root = {};
+
+  files.forEach(file => {
+    const parts = file.path.split('/');
+    let cur = root;
+
+    parts.forEach((p, i) => {
+      if (!cur[p]) {
+        cur[p] = {
+          __children: {},
+          __file: i === parts.length - 1
+        };
+      }
+      cur = cur[p].__children;
+    });
+  });
+
+  return root;
+}
+
+/* RENDER TREE */
+function renderTree(obj, container, basePath = "") {
+  container.innerHTML = "";
+
+  Object.keys(obj).forEach(name => {
+    const fullPath = basePath ? `${basePath}/${name}` : name;
+
+    const node = document.createElement("div");
+
+    const item = document.createElement("div");
+    item.className = "item";
+
+    const icon = document.createElement("span");
+    icon.className = "icon";
+    icon.textContent = obj[name].__file ? "📄" : "📂";
+
+    const label = document.createElement("span");
+    label.textContent = name;
+
+    item.appendChild(icon);
+    item.appendChild(label);
+
+    if (!obj[name].__file) {
+      node.appendChild(item);
+
+      const children = document.createElement("div");
+      children.className = "children";
+
+      item.onclick = () => node.classList.toggle("open");
+
+      renderTree(obj[name].__children, children, fullPath);
+      node.appendChild(children);
+
+    } else {
+      const link = document.createElement("a");
+
+      let url = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${fullPath}`;
+
+      // Optional: PDF viewer
+      if (fullPath.endsWith(".pdf")) {
+        url = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${url}`;
+      }
+      else if (fullPath.endsWith(".md")) {
+        url = `https://akashisgreat.github.io/viewer/markdown.html?file=${url}`;
+      }
+      else if (fullPath.endsWith(".minder")) {
+        url = `https://akashisgreat.github.io/viewer/minder.html?file=${url}`;
+      }
+
+      link.href = url;
+      link.target = "_blank";
+      link.style.textDecoration = "none";
+      link.style.color = "inherit";
+
+      link.appendChild(item);
+      node.appendChild(link);
+    }
+
+    container.appendChild(node);
+  });
+}
+
+/* SEARCH */
+document.getElementById("search").addEventListener("input", function () {
+  const q = this.value.toLowerCase();
+
+  if (!q) {
+    renderTree(buildTree(allFiles), document.getElementById("tree"));
+    return;
+  }
+
+  const filtered = allFiles.filter(f => f.path.toLowerCase().includes(q));
+  renderTree(buildTree(filtered), document.getElementById("tree"));
+
+  // auto expand
+  document.querySelectorAll(".children").forEach(c => {
+    c.style.display = "block";
+  });
+});
+
+loadFiles();
+</script>
+
+</body>
+</html>

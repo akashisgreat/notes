@@ -1,5 +1,5 @@
 # Books to read
-
+<style>img{width:400px;}</style>
 ## 1. Rational optimist (by Matt Ridley)
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQQlI-cQtm_k5UPqx6XrPEb3N3Bw9gyM9lsde2oeGRRXQCMvKBhrYtmpDAKNMCW3SRlzQuMRYd1E5kM_D4o9cydFnmMv25PcT6RiWW4-dDA&s=10)
 
@@ -13,23 +13,23 @@
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdD7sbFSoXubb0CMlVSJZtfILP63_Pd2Dklw&s)
 
 ## 5. Enlightenment Now (by Steven Pinker)
-![](https://m.media-amazon.com/images/I/81TgCVpAgIL._AC_UF1000,1000_QL80_.jpg)
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ_5CkDMj10ufZgQq-1THTrKVEQoIx27odRVHPebbglrM5228yLj6J5f830W19-oVdLPKyyUJ_N3pQI3baSkX_lENUn09eTa4qFnfLHMY1oDZuu3Kz&s=10&ec=121689710)
 
 ## 6. The Story of My Experiments with Truth (by Mahatma Gandhi)
-![The Experiment with Truth](./files/expererment-with-truth.png.png)
+![](https://www.jaicobooks.com/wp-content/uploads/2022/12/j-1755-my-experiments-with-truth-an-autobiography-m-k-gandhi.jpg)
 
 ## 7. Why i am an athiest and other work (by bhagat singh)
-![](./files/why-i-am-atheist.png)
+![](https://m.media-amazon.com/images/I/41KjA2iNXvL._SY445_SX342_FMwebp_.jpg)
 
 ## 8. Jail dairy (by bhagat singh)
-![](./files/jail-dairy.png)
+![](https://m.media-amazon.com/images/I/41gopJR2QcL._SY445_SX342_FMwebp_.jpg)
 
 ## 9. Atomic Habits (by James clear)
-![](./files/atomic-habit.png)
+![](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg)
 
 ## 10. Sapiens (by Yuval Noah Harari)
-![](./files/sapiens.png)
+![](https://m.media-amazon.com/images/I/41gN0Tyw0eL._SY445_SX342_FMwebp_.jpg)
 
 
 ## 11. Every body lies
-![](https://www.amazon.in/Everybody-Lies-Internet-About-Really/dp/0062390856)
+![](https://m.media-amazon.com/images/I/41-cEbkyBVL._SY445_SX342_FMwebp_.jpg)

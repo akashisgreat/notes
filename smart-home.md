@@ -4,31 +4,26 @@
 
 ## Smart Home Wiring
 1. WIFi Ethernet socket & wire
-2. Dish socket & wire
-3. Radio socket & wire
+2. Dish socket & wire -TV, Speaker
+3. Radio socket & wire - Radio
 4. Doorbell Wire
-
-## Home wiring
-1. Router point
-2. Smart Home Control Center
-3. CCTV Camera points & Control center
-4. Fridge Point
-5. Tv point
-6. Speaker point
-7. Invertor point
-8. Moter pump point
-9. Mobile charging points
+5. Walkie talkie wire
+---
+## Smart Home things
+### Live System
+1. Live Home Brain
+2. Listen and Speak - Voice Assistant
+3. See and Show - Camera Setup & Display setup
+4. Actions and Sense - The Compute System
+### Compute System
+1. Water tank sensor  #sence #monitor #control 
+2. Current & voltage sensor with invertor battery indication #sence #monitor #control
+3. Temperature & Humidity sensor #monitor #logger
+4. Smart Switches #control 
+5. Motion & presence sensor
 
 ### Non-Compute System
 1. Plant watering system
 2. Almira door light sensor
 3. Walkie Talkie
-### Compute System
-1. Water tank sensor  #sence #monitor #control 
-2. Current & voltage sensor #sence #monitor #control
-3. Temperature & Humidity sensor #monitor #logger
-4. Camera system
-5. Motion & presence sensor
-
-
 

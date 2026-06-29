@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "smart-home.md",
+                "file": "knowledge/type-of-milk.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "smart-home"
+              "title": "type-of-milk"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bfce10f0221c3cd6",
@@ -187,8 +186,9 @@
   },
   "active": "3c9b00b73e2acec0",
   "lastOpenFiles": [
+    "smart-home.md",
+    "learn/electronic.md",
     "movies-to-watch.md",
-    "books-to-read.md",
-    "smart-home.md"
+    "books-to-read.md"
   ]
 }

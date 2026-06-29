@@ -57,5 +57,5 @@ String variable = "MyName";
 
 ---
 # Questions?
-1. MQTT broker?
+1. MQTT broker? (e.g: Eclipse Mosquitto), Home programmer : Node-RED
 2. RS-485 modules?

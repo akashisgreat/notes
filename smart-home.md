@@ -16,6 +16,10 @@
 	2. Listen and Speak - Voice Assistant (Communicate)
 	3. See and Show - Camera Setup & Display setup
 	4. Actions and Sense - The Compute System (Do some actions, Log)
+- speaker
+- camera
+- screens
+
 ### Compute System
 1. Water tank sensor  #sence #monitor #control 
 2. Current & voltage sensor with invertor battery indication #sence #monitor #control

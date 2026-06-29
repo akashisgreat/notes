@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/type-of-milk.md",
+                "file": "learn/electronic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "type-of-milk"
+              "title": "electronic"
             }
           }
         ]
@@ -187,6 +187,7 @@
   "active": "3c9b00b73e2acec0",
   "lastOpenFiles": [
     "smart-home.md",
+    "knowledge/type-of-milk.md",
     "learn/electronic.md",
     "movies-to-watch.md",
     "books-to-read.md"

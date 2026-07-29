@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GPS GNSS RTK.md",
+                "file": "learn/GIS/QGIS Learn.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GPS GNSS RTK"
+              "title": "QGIS Learn"
             }
           }
         ]
@@ -185,8 +185,10 @@
   },
   "active": "976b6b91ac9f20a9",
   "lastOpenFiles": [
-    "smart-home.md",
     "GPS GNSS RTK.md",
+    "learn/GIS/QGIS Learn.md",
+    "learn/GIS",
+    "smart-home.md",
     "learn/electronic.md"
   ]
 }

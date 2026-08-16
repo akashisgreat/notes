@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learn/GIS/QGIS Learn.md",
+                "file": "knowledge/Distance & Area Units.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "QGIS Learn"
+              "title": "Distance & Area Units"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -183,10 +185,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "976b6b91ac9f20a9",
+  "active": "70ca946e09e46b1f",
   "lastOpenFiles": [
-    "GPS GNSS RTK.md",
+    "MyThings/movies-to-watch.md",
+    "MyThings/books-to-read.md",
+    "learn/smart-home.md",
+    "learn/GPS GNSS RTK.md",
+    "knowledge/type-of-milk.md",
+    "knowledge/ai.md",
+    "knowledge/Distance & Area Units.md",
     "learn/GIS/QGIS Learn.md",
+    "GPS GNSS RTK.md",
     "learn/GIS",
     "smart-home.md",
     "learn/electronic.md"

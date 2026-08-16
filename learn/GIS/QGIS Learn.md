@@ -24,6 +24,7 @@ Every location on Earth can be described with two numbers.
 e.g. : Lat, Long; easting, northing etc.
 
 ## 4. Coordinate Reference System (CRS)
+    - For GIS it is known as Geographical Cordinates System)
 Coordinates need a reference system so everyone interprets them the same way.
 
 A **CRS** defines:

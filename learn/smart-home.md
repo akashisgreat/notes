@@ -22,10 +22,11 @@
 
 ### Compute System
 1. Water tank sensor  #sence #monitor #control 
-2. Current & voltage sensor with invertor battery indication #sence #monitor #control
-3. Temperature & Humidity sensor #monitor #logger
-4. Smart Switches #control 
-5. Motion & presence sensor
+2. Current & voltage power consume sensor #sence #monitor 
+3. invertor battery indication #sence #monitor 
+4. Temperature & Humidity sensor #monitor #logger
+5. Smart Switches #control 
+6. Motion & presence sensor with wifi
 
 ### Non-Compute System
 1. Plant watering system
